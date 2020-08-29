@@ -1,0 +1,62 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    build_app(
+      workspace: "Runner.xcworkspace", 
+      scheme: "Runner"
+    )
+    upload_to_testflight
+  end
+
+  desc "Push a new release build to the App Store"
+  lane :release do
+    build_app(
+      workspace: "Runner.xcworkspace", 
+      scheme: "Runner"
+    )
+    upload_to_app_store
+  end
+
+  desc "Download provisioning profiles"
+  lane :rematch do
+    match(
+      type: "development", # or appstore/adhoc
+      # git_branch: "my-app",
+      username: "pedro.zaroni@dextra-sw.com",
+      # force: true, # enable to refresh profiles
+      readonly: true,
+    )
+    match(
+      type: "appstore",
+      # git_branch: "my-app",
+      username: "pedro.zaroni@dextra-sw.com",
+      # force: true, # enable to refresh profiles
+      readonly: true,
+    )
+  end
+
+  desc "Add new device"
+  lane :device do
+    device_name = prompt(text: 'What is the device name: ')
+    device_UDID = prompt(text: 'What is the device UDID: ')
+    register_devices(devices: {device_name => device_UDID})
+    rematch
+  end
+end

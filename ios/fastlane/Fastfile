@@ -16,13 +16,31 @@
 default_platform(:ios)
 
 platform :ios do
+  desc "Deploy to TestFlight"
+  lane :deploy_to_testflight do
+    # Ensure all files are commited
+    ensure_git_status_clean
+
+    sh("flutter build ios --release --no-codesign")
+
+    # Sync certs/profiles
+    rematch
+
+    # Deploy to TestFlight
+    beta
+
+    # Post update on Slack
+    slack(message: "Successfully distributed a new beta build")
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     build_app(
       workspace: "Runner.xcworkspace", 
-      scheme: "Runner"
+      scheme: "Runner",
+      output_directory: "./build/Runner",
     )
-    upload_to_testflight
+    upload_to_testflight()
   end
 
   desc "Push a new release build to the App Store"

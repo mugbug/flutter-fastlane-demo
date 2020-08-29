@@ -16,11 +16,11 @@ _**fastlane**_  handles tedious tasks so you don’t have to.
 Setup Fastlane
 ---
 ```bash
+$ gem install bundler
 $ bundle init
 $ echo "gem 'fastlane'" >> Gemfile
 $ bundle install
 $ cd ios
-$ bundle exec fastlane init
 ```
 
 ```bash
@@ -29,17 +29,17 @@ alias lane="bundle exec fastlane"
 
 ---
 
-screenshot ---
+$ **lane init**
+---
+
+![height:400px](readme-images/fastlane-init.png)
 
 ---
 
 - Automatically create App ID on **Apple Developer Portal**
-
 - Automatically create App on **Apple Store Connect**
-
----
-
-screenshot ---
+- Configured **Appfile**
+- Sample **Fastfile**
 
 ---
 
@@ -72,7 +72,7 @@ $ **lane beta**
 
 ---
 
-Avoid the frustration of managing code signing identities
+Avoid the **frustration** of managing code signing identities
 --- 
 
 Uncheck _Automatically manage signing_ =]
@@ -116,7 +116,7 @@ $ **lane match init**
 
 ###### https://codesigning.guide
 
-###### Now it's also possible to use gcloud or s3 to store the certificates/profiles
+###### Note: It's also possible to use gcloud or s3 to store the certificates/profiles
 
 ---
 
@@ -175,13 +175,34 @@ $ **lane beta**
 
 ---
 
+![bg center 90%](readme-images/beta-deploy.png)
+
+---
+
+Where to go from here?
+---
+
+- Version bump
+- Screenshots
+- Release notes
+- Slack message
+- Integrate with any CI tool
+- ∞ -> beyond! 🚀
+
+<br>
+
+https://docs.fastlane.tools
+
+---
+
 fastlane.tools just saved you 40 minutes! 🎉
 ---
 ---
 
 References:
 ---
+- [fastlane docs](https://docs.fastlane.tools)
 - [Automating Your App's Release Process Using Fastlane](https://www.youtube.com/watch?v=scfOk5SgrKU)
-- [Flutter + Fastlane Tips: Centralized Project Metadata Management](https://levelup.gitconnected.com/flutter-fastlane-tips-centralized-project-metadata-management-6de3fec21d37)
 - [A new approach to code signing](https://codesigning.guide)
 - [Continuous delivery with Flutter](https://flutter.dev/docs/deployment/cd)
+- [Marp gist](https://gist.github.com/yhatt/a7d33a306a87ff634df7bb96aab058b5)

@@ -4,7 +4,24 @@ theme: uncover
 class: invert
 ---
 
-# Flutter + Fastlane = 🚀
+# Flutter* + **Fastlane** = 🚀
+
+<br><br>
+
+###### * or React Native or Nativo ...
+
+---
+
+# Oi, sou o Pedro =]
+### Dev iOS - Stark 🐺
+##### R.I.P. PMA Mobile :(
+
+---
+###### 📸 Gerar screenshot p/ vários devices
+### 🚀 Gerar versão pra loja
+##### 🔐 Problemas com gerenciamento de cert/profiles
+### 🤖 Configurar CI
+#### ✈️ Gerar versão beta
 
 ---
 
@@ -15,12 +32,13 @@ class: invert
 # Setup Fastlane
 
 ```bash
-# $ gem install bundler
-# $ bundle init
-# $ echo "gem 'fastlane'" >> Gemfile
-# $ bundle install
-$ gem install fastlane
 $ cd ios
+$ gem install bundler
+$ bundle init
+$ echo "gem 'fastlane'" >> Gemfile
+$ bundle install
+# ou simplesmente (não recomendado)
+# $ gem install fastlane
 ```
 
 ```bash
@@ -70,6 +88,7 @@ end
 ❌  error: "Runner" requires a provisioning profile. Select a provisioning profile in the Signing & Capabilities editor. (in target 'Runner' from project 'Runner')
 
 ---
+<!-- _class: -->
 
 ![bg center 90%](readme-images/code-signing-troubles.png)
 
@@ -108,11 +127,6 @@ Private keys + certificates => Github private repo
 - _sigh_ will make sure you have a valid provisioning profile installed locally, that matches the installed certificate
 
 ###### Mainly used if you don't want to revoke existing certificates
-
----
-
-## $ **lane match**
-![height:500px](readme-images/git-repo.png)
 
 ---
 
@@ -165,6 +179,11 @@ end
 - Create new provisioning profile for Bundle ID
 - Setup Passphrase for Match storage
 - Encrypt and upload certificate and profile to git repo
+
+---
+
+<!-- _class: -->
+![height:500px](readme-images/git-repo.png)
 
 ---
 

@@ -4,22 +4,22 @@ theme: uncover
 class: invert
 ---
 
-Flutter + Fastlane = 🚀
----
-
----
-_**fastlane**_  handles tedious tasks so you don’t have to.
----
+# Flutter + Fastlane = 🚀
 
 ---
 
-Setup Fastlane
+# _**fastlane**_  handles tedious tasks so you don’t have to.
+
 ---
+
+# Setup Fastlane
+
 ```bash
-$ gem install bundler
-$ bundle init
-$ echo "gem 'fastlane'" >> Gemfile
-$ bundle install
+# $ gem install bundler
+# $ bundle init
+# $ echo "gem 'fastlane'" >> Gemfile
+# $ bundle install
+$ gem install fastlane
 $ cd ios
 ```
 
@@ -29,13 +29,13 @@ alias lane="bundle exec fastlane"
 
 ---
 
-$ **lane init**
----
+# $ **lane init**
 
 ![height:400px](readme-images/fastlane-init.png)
 
 ---
 
+# $ **lane init**
 - Automatically create App ID on **Apple Developer Portal**
 - Automatically create App on **Apple Store Connect**
 - Configured **Appfile**
@@ -63,8 +63,7 @@ end
 
 ---
 
-$ **lane beta**
----
+# $ **lane beta**
 <br>
 ** ARCHIVE FAILED **
 
@@ -72,23 +71,27 @@ $ **lane beta**
 
 ---
 
-Avoid the **frustration** of managing code signing identities
---- 
+![bg center 90%](readme-images/code-signing-troubles.png)
+
+---
+
+# Avoid the **frustration** of managing code signing identities
 
 Uncheck _Automatically manage signing_ =]
 
 ---
 
-Using _**match**_
----
-
-Using _**cert**_ and _**sigh**_
----
+![bg center 80%](readme-images/xcode.png)
 
 ---
 
-Using _**match**_
+# Using _**match**_
+
+# Using _**cert**_ and _**sigh**_
+
 ---
+
+# Using _**match**_
 
 Private keys + certificates => Github private repo
 - Easy to setup new machines with only the repo access
@@ -99,8 +102,7 @@ Private keys + certificates => Github private repo
 
 ---
 
-Using _**cert**_ and _**sigh**_
----
+# Using _**cert**_ and _**sigh**_
 
 - _cert_ will make sure you have a valid certificate and its private key installed on the local machine
 - _sigh_ will make sure you have a valid provisioning profile installed locally, that matches the installed certificate
@@ -109,14 +111,18 @@ Using _**cert**_ and _**sigh**_
 
 ---
 
+## $ **lane match**
+![height:500px](readme-images/git-repo.png)
+
+---
+
 To get started, create a **new private Git repo** and run:
 
-$ **lane match init**
----
+# $ **lane match init**
 
 ###### https://codesigning.guide
 
-###### Note: It's also possible to use gcloud or s3 to store the certificates/profiles
+###### Note: It's also possible to use Google Cloud or Amazon S3 to store the certificates/profiles
 
 ---
 
@@ -145,7 +151,7 @@ lane :rematch do
     type: "appstore", # or development/adhoc
     # git_branch: "my-app",
     username: "pedro.zaroni@dextra-sw.com",
-    force: true, # enable to refresh profiles
+    force: true, # enable to always refresh profiles
     # readonly: true, # enable to prevent refreshes
   )
 end
@@ -153,8 +159,7 @@ end
 
 ---
 
-$ **lane rematch**
----
+# $ **lane rematch**
 
 - Generate new certificate and import to local machine
 - Create new provisioning profile for Bundle ID
@@ -163,15 +168,23 @@ $ **lane rematch**
 
 ---
 
-Let's check Xcode's Signing & Capabilities
+# Let's check Xcode's Signing & Capabilities
+
 ---
+
+### Why use **match**?
+
+- Full control over what happens
+- Share a single code signing identity across the team
+- Automatically repair broken and expired credentials
+- Clean setup in minutes
+- It just works™
 
 ---
 
 Sounds good, now let's try this again:
 
-$ **lane beta**
----
+## $ **lane beta**
 
 ---
 
@@ -179,12 +192,12 @@ $ **lane beta**
 
 ---
 
-Where to go from here?
----
+## Where to go from here?
 
 - Version bump
 - Screenshots
 - Release notes
+- Firebase App Distribution
 - Slack message
 - Integrate with any CI tool
 - ∞ -> beyond! 🚀
@@ -195,8 +208,8 @@ https://docs.fastlane.tools
 
 ---
 
-fastlane.tools just saved you 40 minutes! 🎉
----
+## fastlane.tools just saved you 40 minutes! 🎉
+
 ---
 
 References:

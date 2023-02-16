@@ -57,14 +57,14 @@ platform :ios do
     match(
       type: "development", # or appstore/adhoc
       # git_branch: "my-app",
-      username: "pedro.zaroni@dextra-sw.com",
+      username: "mugbug@example.com",
       # force: true, # enable to refresh profiles
       readonly: true,
     )
     match(
       type: "appstore",
       # git_branch: "my-app",
-      username: "pedro.zaroni@dextra-sw.com",
+      username: "mugbug@example.com",
       # force: true, # enable to refresh profiles
       readonly: true,
     )

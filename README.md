@@ -8,20 +8,18 @@ class: invert
 
 <br><br>
 
-###### * or React Native or Nativo ...
+###### * or React Native or native iOS/Android ...
 
 ---
 
-# Oi, sou o Pedro =]
-### Dev iOS - Stark 🐺
-##### R.I.P. PMA Mobile :(
+# Hi, I'm Pedro!
 
 ---
-###### 📸 Gerar screenshot p/ vários devices
-### 🚀 Gerar versão pra loja
-##### 🔐 Problemas com gerenciamento de cert/profiles
-### 🤖 Configurar CI
-#### ✈️ Gerar versão beta
+###### 📸 Generate screenshots for multiple device sizes
+### 🚀 Build and upload a new version to the AppStore
+##### 🔐 Handle generate and download certificates and profiles
+### 🤖 Configure CI
+#### ✈️ Build and upload a beta version to TestFlight
 
 ---
 
@@ -150,7 +148,7 @@ git_url("git@github.com:mugbug/fastlane-demo-certs.git")
 storage_mode("git")
 
 # Apple Developer Portal username
-username("pedro.zaroni@dextra-sw.com")
+username("mugbug@example.com")
 ```
 
 ---
@@ -164,7 +162,7 @@ lane :rematch do
   match(
     type: "appstore", # or development/adhoc
     # git_branch: "my-app",
-    username: "pedro.zaroni@dextra-sw.com",
+    username: "mugbug@example.com",
     force: true, # enable to always refresh profiles
     # readonly: true, # enable to prevent refreshes
   )
